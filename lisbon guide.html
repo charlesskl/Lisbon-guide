@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lisbon Travel Guide — 8–13 June 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0F2C4E;
+  --ocean: #1A6B8A;
+  --gold: #C7934A;
+  --sand: #F5EDE0;
+  --cream: #FDFBF7;
+  --stone: #E8DFD0;
+  --ink: #1A1A1A;
+  --slate: #4A5568;
+  --mist: #8FA3B0;
+  --white: #FFFFFF;
+  --coral: #D4654A;
+  --sage: #7A9E7E;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+/* === HERO === */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--navy) 0%, #0D3B5E 40%, var(--ocean) 100%);
+  overflow: hidden;
+  text-align: center;
+  padding: 60px 24px;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.5;
+}
+.hero-content { position: relative; z-index: 2; max-width: 700px; }
+.hero-label {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 24px;
+  border: 1px solid rgba(199,147,74,0.4);
+  padding: 8px 24px;
+  border-radius: 100px;
+}
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(48px, 8vw, 88px);
+  color: var(--white);
+  letter-spacing: -1px;
+  line-height: 1.05;
+  margin-bottom: 20px;
+}
+.hero h1 em { font-style: italic; color: var(--gold); }
+.hero-sub {
+  font-size: 17px;
+  color: rgba(255,255,255,0.7);
+  font-weight: 300;
+  line-height: 1.8;
+  max-width: 520px;
+  margin: 0 auto 32px;
+}
+.hero-detail {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.hero-detail span { color: var(--gold); }
+.hero-detail .sep { width: 4px; height: 4px; border-radius: 50%; background: var(--gold); }
+
+/* === CONTAINER === */
+.container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+
+/* === SECTION === */
+section { padding: 80px 0; }
+section + section { border-top: 1px solid var(--stone); }
+.section-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--ocean);
+  margin-bottom: 12px;
+}
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 5vw, 44px);
+  color: var(--navy);
+  margin-bottom: 20px;
+  line-height: 1.15;
+}
+.section-intro {
+  font-size: 16px;
+  color: var(--slate);
+  max-width: 680px;
+  margin-bottom: 48px;
+  line-height: 1.8;
+}
+
+/* === ITINERARY CARDS === */
+.itin-grid { display: flex; flex-direction: column; gap: 0; }
+.day-card {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 0;
+  border-bottom: 1px solid var(--stone);
+  padding: 32px 0;
+  position: relative;
+}
+.day-card:first-child { padding-top: 0; }
+.day-card:last-child { border-bottom: none; }
+.day-card.highlight { background: linear-gradient(90deg, rgba(212,101,74,0.06) 0%, transparent 100%); margin: 0 -24px; padding: 32px 24px; border-radius: 12px; border-bottom: none; }
+.day-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  font-weight: 700;
+  color: var(--stone);
+  line-height: 1;
+  padding-top: 4px;
+}
+.day-card.highlight .day-num { color: var(--coral); }
+.day-body { padding-left: 20px; }
+.day-date {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--mist);
+  margin-bottom: 4px;
+}
+.day-card.highlight .day-date { color: var(--coral); }
+.day-theme {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  color: var(--navy);
+  margin-bottom: 12px;
+}
+.day-schedule { list-style: none; padding: 0; }
+.day-schedule li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 14.5px;
+  color: var(--slate);
+  line-height: 1.65;
+}
+.day-schedule li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--stone);
+}
+.day-card.highlight .day-schedule li::before { background: var(--coral); }
+.day-schedule li strong { color: var(--ink); font-weight: 600; }
+.day-tip {
+  margin-top: 12px;
+  padding: 10px 14px;
+  background: rgba(26,107,138,0.06);
+  border-left: 3px solid var(--ocean);
+  border-radius: 0 6px 6px 0;
+  font-size: 13px;
+  color: var(--ocean);
+}
+.day-card.highlight .day-tip { background: rgba(212,101,74,0.06); border-left-color: var(--coral); color: var(--coral); }
+
+.day-transport {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(26,107,138,0.08);
+  border: 1px solid rgba(26,107,138,0.15);
+  border-radius: 6px;
+  padding: 6px 12px;
+  margin-top: 10px;
+  margin-right: 8px;
+  font-size: 12px;
+  color: var(--ocean);
+  font-weight: 600;
+}
+.day-transport.highlight-t {
+  background: rgba(212,101,74,0.08);
+  border-color: rgba(212,101,74,0.15);
+  color: var(--coral);
+}
+
+/* === IMAGE GALLERY === */
+.img-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 40px 0;
+}
+.img-row.triple { grid-template-columns: 1fr 1fr 1fr; }
+.img-card {
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 4/3;
+  background: var(--stone);
+}
+.img-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.img-card:hover img { transform: scale(1.03); }
+.img-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 24px 16px 12px;
+  background: linear-gradient(transparent, rgba(0,0,0,0.65));
+  color: var(--white);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* === TRACK SECTION === */
+.track-hero {
+  background: var(--navy);
+  border-radius: 16px;
+  padding: 48px 40px;
+  margin: 40px 0;
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+.track-hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(199,147,74,0.15) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.track-hero h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  margin-bottom: 8px;
+  position: relative;
+}
+.track-hero .track-sub { color: rgba(255,255,255,0.6); font-size: 14px; margin-bottom: 24px; position: relative; }
+.track-providers { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; position: relative; }
+.provider-card {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+  padding: 20px;
+}
+.provider-card h4 { font-size: 15px; color: var(--gold); margin-bottom: 6px; }
+.provider-card p { font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.6; }
+
+/* === PLACES GRID === */
+.places-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 32px 0; }
+.place-card {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 24px;
+  border: 1px solid var(--stone);
+  transition: box-shadow 0.3s ease;
+}
+.place-card:hover { box-shadow: 0 8px 30px rgba(0,0,0,0.06); }
+.place-card h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+.place-card p { font-size: 13.5px; color: var(--slate); line-height: 1.65; }
+.place-tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 100px;
+  margin-bottom: 10px;
+}
+.tag-lisbon { background: rgba(26,107,138,0.1); color: var(--ocean); }
+.tag-sintra { background: rgba(122,158,126,0.15); color: var(--sage); }
+.tag-cascais { background: rgba(199,147,74,0.15); color: var(--gold); }
+
+/* === TRANSPORT TABLE === */
+.transport-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 24px 0 40px;
+  font-size: 14px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--stone);
+}
+.transport-table thead th {
+  background: var(--navy);
+  color: var(--white);
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 14px 16px;
+  text-align: left;
+}
+.transport-table tbody td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--stone);
+  color: var(--slate);
+}
+.transport-table tbody tr:last-child td { border-bottom: none; }
+.transport-table tbody tr:nth-child(even) { background: rgba(245,237,224,0.4); }
+.transport-table tbody td:nth-child(2) { font-weight: 600; color: var(--ink); }
+
+/* === RESTAURANT SECTION === */
+.resto-category { margin-bottom: 40px; }
+.resto-category h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  color: var(--navy);
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--gold);
+  display: inline-block;
+}
+.resto-list { list-style: none; padding: 0; }
+.resto-list li { margin-bottom: 14px; padding-left: 0; font-size: 14.5px; color: var(--slate); line-height: 1.65; }
+.resto-list li strong { color: var(--ink); }
+.resto-list li .price { color: var(--gold); font-weight: 600; font-size: 12px; }
+
+/* === HOTEL COMPARISON === */
+.budget-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 32px 0; }
+.budget-col {
+  background: var(--white);
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--stone);
+}
+.budget-header {
+  padding: 20px 24px;
+  text-align: center;
+}
+.budget-header.premium { background: var(--navy); color: var(--white); }
+.budget-header.value { background: var(--ocean); color: var(--white); }
+.budget-header h3 { font-family: 'Playfair Display', serif; font-size: 20px; margin-bottom: 4px; }
+.budget-header p { font-size: 12px; opacity: 0.7; }
+.budget-body { padding: 20px 24px; }
+.budget-body li { font-size: 13.5px; color: var(--slate); margin-bottom: 10px; line-height: 1.6; list-style: none; padding-left: 16px; position: relative; }
+.budget-body li::before { content: '→'; position: absolute; left: 0; color: var(--gold); font-weight: 700; }
+.budget-body li strong { color: var(--ink); }
+.budget-total {
+  text-align: center;
+  padding: 16px;
+  border-top: 1px solid var(--stone);
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  color: var(--navy);
+}
+
+/* === FOOD LIST === */
+.food-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 24px 0 40px; }
+.food-item {
+  background: var(--white);
+  border: 1px solid var(--stone);
+  border-radius: 8px;
+  padding: 14px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--navy);
+}
+
+/* === TOTAL BUDGET === */
+.total-box {
+  background: linear-gradient(135deg, var(--navy), var(--ocean));
+  border-radius: 16px;
+  padding: 48px 40px;
+  color: var(--white);
+  margin: 40px 0;
+}
+.total-box h3 { font-family: 'Playfair Display', serif; font-size: 28px; margin-bottom: 24px; }
+.total-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2px; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; }
+.total-cell { padding: 14px 16px; font-size: 13.5px; }
+.total-cell.header { background: rgba(0,0,0,0.2); font-weight: 700; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; }
+.total-cell.data { background: rgba(0,0,0,0.1); }
+.total-cell.data.highlight-row { background: rgba(199,147,74,0.2); font-weight: 700; color: var(--gold); font-size: 15px; }
+
+/* === TIPS === */
+.tips-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 24px; }
+.tip-card {
+  background: var(--white);
+  border: 1px solid var(--stone);
+  border-radius: 10px;
+  padding: 20px;
+}
+.tip-card h4 { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+.tip-card p { font-size: 13px; color: var(--slate); line-height: 1.65; }
+
+/* === FOOTER === */
+.footer {
+  text-align: center;
+  padding: 60px 24px;
+  background: var(--navy);
+  color: rgba(255,255,255,0.5);
+  font-size: 13px;
+}
+.footer strong { color: var(--gold); }
+
+@media (max-width: 700px) {
+  .day-card { grid-template-columns: 60px 1fr; }
+  .day-num { font-size: 32px; }
+  .img-row, .img-row.triple { grid-template-columns: 1fr; }
+  .places-grid, .budget-grid, .tips-grid, .track-providers { grid-template-columns: 1fr; }
+  .total-grid { grid-template-columns: 1fr; }
+  .food-grid { grid-template-columns: 1fr 1fr; }
+  .track-hero { padding: 32px 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-content">
+    <div class="hero-label">Travel Guide 2026</div>
+    <h1><em>Lisbon</em> & the Portuguese Riviera</h1>
+    <p class="hero-sub">5 nights of sun-soaked exploration — medieval Alfama lanes, fairy-tale palaces, Atlantic coastline, the Portuguese Riviera. No museums. Just vibes.</p>
+    <div class="hero-detail">
+      <span>8 Jun – 13 Jun</span>
+      <div class="sep"></div>
+      <span>5 Nights</span>
+      <div class="sep"></div>
+      <span>HK → Lisbon → HK</span>
+    </div>
+  </div>
+</div>
+
+<!-- ITINERARY -->
+<section>
+  <div class="container">
+    <div class="section-label">Your Schedule</div>
+    <div class="section-title">Day-by-Day Itinerary</div>
+    <p class="section-intro">You land at 12:35 on 8 June and depart at 14:20 on 13 June — here's every hour optimised. Need to be at the airport by ~12:00 on departure day.</p>
+
+    <div class="itin-grid">
+
+      <!-- DAY 1 -->
+      <div class="day-card">
+        <div class="day-num">01</div>
+        <div class="day-body">
+          <div class="day-date">Sunday, 8 June — Arrival Day</div>
+          <div class="day-theme">Touchdown & First Taste</div>
+          <ul class="day-schedule">
+            <li><strong>12:35</strong> — Land at Lisbon Airport. Metro Red Line or Uber to hotel (~20 min, €10–15)</li>
+            <li><strong>14:30</strong> — Check in, freshen up</li>
+            <li><strong>15:30</strong> — Stroll through <strong>Baixa</strong> grid streets to <strong>Praça do Comércio</strong> — Lisbon's grand riverside square</li>
+            <li><strong>17:00</strong> — Walk up to <strong>Miradouro de Santa Luzia</strong> or <strong>Portas do Sol</strong> for golden-hour views over Alfama's rooftops and the Tagus River</li>
+            <li><strong>19:30</strong> — Dinner at <strong>Taberna da Rua das Flores</strong> (book ahead!) or casual tasca in Bairro Alto. Try your first bacalhau and a glass of Vinho Verde</li>
+          </ul>
+          <div class="day-tip">💡 Jet lag tip: Resist the nap. The late afternoon light and riverside breeze will energise you.</div>
+          <div style="margin-top:10px;">
+            <span class="day-transport">🚇 Airport → Hotel: Metro Red Line to Baixa-Chiado or Rossio (20 min, €1.65 + €0.50 Viva Viagem card)</span>
+            <span class="day-transport">🚗 OR Uber from airport — 20 min, €10–15. Easier with luggage</span>
+            <span class="day-transport">🚶 All afternoon sightseeing is walking from your hotel in Baixa/Rossio</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- DAY 2 -->
+      <div class="day-card">
+        <div class="day-num">02</div>
+        <div class="day-body">
+          <div class="day-date">Monday, 9 June — AIMA Appointment</div>
+          <div class="day-theme">Immigration + Neighbourhood Explore</div>
+          <ul class="day-schedule">
+            <li><strong>9:00</strong> — Relaxed breakfast at hotel. Prepare documents for your AIMA appointment</li>
+            <li><strong>10:30</strong> — Head to <strong>AIMA Lisboa</strong> — Av. António Augusto de Aguiar, 20 (near Marquês de Pombal metro, Green/Yellow line). Arrive 15–20 min early</li>
+            <li><strong>11:00</strong> — <strong>🏛️ AIMA Immigration Appointment</strong></li>
+            <li><strong>12:30</strong> — After your appointment, walk 5 min to <strong>Príncipe Real</strong> — leafy neighbourhood right nearby with great lunch spots</li>
+            <li><strong>13:00</strong> — Lunch at <strong>A Cevicheria</strong> (Peruvian-Portuguese fusion, famous octopus hanging from ceiling) or <strong>Café Buenos Aires</strong> on the garden square</li>
+            <li><strong>15:00</strong> — Stroll through the <strong>Príncipe Real garden</strong>, browse boutiques, natural wine bars, vintage shops</li>
+            <li><strong>16:30</strong> — Walk down to <strong>Miradouro de São Pedro de Alcântara</strong> — panoramic viewpoint over Alfama and the castle</li>
+            <li><strong>17:30</strong> — Coffee or ginjinha (cherry liqueur) at a kiosk near Rossio Square</li>
+            <li><strong>20:00</strong> — <strong>Fado dinner</strong> at O Faia or Clube de Fado in Alfama — live traditional music + set menu (~€45–65)</li>
+          </ul>
+          <div class="day-tip">📋 AIMA tip: Bring your passport, appointment confirmation, and any supporting documents.</div>
+          <div style="margin-top:10px; padding:12px; background:rgba(26,107,138,0.04); border-radius:8px;">
+            <div style="font-size:13px; font-weight:700; color:var(--navy); margin-bottom:8px;">🗺️ Step-by-Step: Hotel → AIMA</div>
+            <div style="font-size:12.5px; color:var(--slate); line-height:1.8;">
+              1. Walk from hotel to <strong>Rossio metro station</strong> (Praça do Rossio) — 2–5 min walk<br>
+              2. Take <strong>Green Line</strong> direction Telheiras → 1 stop to <strong>Marquês de Pombal</strong> (2 min)<br>
+              3. Exit metro, walk east along Av. António Augusto de Aguiar — <strong>AIMA is at number 20</strong> (2 min walk)<br>
+              4. Total: ~10 min door-to-door · €1.65
+            </div>
+          </div>
+          <div style="margin-top:8px;">
+            <span class="day-transport">🚶 AIMA → Príncipe Real — 5 min walk uphill (Rua da Escola Politécnica)</span>
+            <span class="day-transport">🚶 Príncipe Real → Rossio/Hotel — 15 min walk downhill through Chiado</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- DAY 3 -->
+      <div class="day-card">
+        <div class="day-num">03</div>
+        <div class="day-body">
+          <div class="day-date">Tuesday, 10 June — Portugal Day 🇵🇹</div>
+          <div class="day-theme">Alfama, Castle & Belém</div>
+          <ul class="day-schedule">
+            <li><strong>8:30</strong> — Early start! Head to <strong>São Jorge Castle</strong> — explore the battlements and enjoy Lisbon's best panoramic views (€10 entry). Go early to beat the crowds</li>
+            <li><strong>10:00</strong> — Wind down through <strong>Alfama's</strong> medieval lanes — azulejo tiles, street art, laundry-strung alleys, hidden courtyards. Sé Cathedral exterior</li>
+            <li><strong>11:30</strong> — Ride <strong>Tram 28</strong> through historic neighbourhoods to Estrela or Chiado</li>
+            <li><strong>12:30</strong> — Lunch at <strong>Taberna da Rua das Flores</strong> (book ahead!) or <strong>Discreto</strong> in Alfama</li>
+            <li><strong>14:00</strong> — Tram 15E or Uber to <strong>Belém</strong>. First stop: <strong>Pastéis de Belém</strong> — the original custard tarts since 1837. Eat warm.</li>
+            <li><strong>14:45</strong> — <strong>Jerónimos Monastery</strong> exterior — stunning UNESCO Manueline architecture. Admire from the outside (confirm holiday hours)</li>
+            <li><strong>15:30</strong> — Walk to <strong>Tower of Belém</strong> — iconic riverside fortress. Beautiful from outside (skip the queue inside)</li>
+            <li><strong>16:00</strong> — Walk along the <strong>Belém waterfront</strong> — stunning riverside promenade with views of the 25 de Abril bridge and Cristo Rei</li>
+            <li><strong>17:00</strong> — <strong>LX Factory</strong> — creative hub in a converted industrial complex. Independent shops, Ler Devagar bookshop, street art</li>
+            <li><strong>20:00</strong> — Dinner at <strong>BouBou's</strong> (7-course tasting from €80 — best-value fine dining) or <strong>Time Out Market</strong> for a casual multi-vendor feast</li>
+          </ul>
+          <div class="day-tip">🇵🇹 10 June is Dia de Portugal — national holiday. Festive atmosphere, some altered hours. Restaurants stay open.</div>
+          <div style="margin-top:10px; padding:12px; background:rgba(26,107,138,0.04); border-radius:8px;">
+            <div style="font-size:13px; font-weight:700; color:var(--navy); margin-bottom:8px;">🗺️ Step-by-Step Directions</div>
+            <div style="font-size:12.5px; color:var(--slate); line-height:1.8;">
+              <strong>Hotel → São Jorge Castle:</strong> Walk east from Baixa through Alfama — uphill 15–20 min, follow signs to "Castelo". OR Uber 5 min, €4.<br><br>
+              <strong>Alfama → Tram 28:</strong> Pick up at Largo das Portas do Sol or Sé Cathedral stop — right in Alfama.<br><br>
+              <strong>Hotel → Belém (Tram 15E):</strong> Walk 10 min south to <strong>Praça do Comércio</strong> tram stop. Take <strong>Tram 15E</strong> direction Algés → get off at <strong>Belém</strong> (20 min, €3.00).<br>
+              <strong>OR Uber:</strong> Direct from anywhere, 15 min, ~€6.<br><br>
+              <strong>Belém → LX Factory:</strong> Uber 5 min, €4. Or walk 15 min along Rua de Belém.
+            </div>
+          </div>
+          <div style="margin-top:8px;">
+            <span class="day-transport">🚶 Castle + Alfama — all walking from hotel</span>
+            <span class="day-transport">🚋 Tram 28 — scenic ride, €3.00 (board at Sé Cathedral)</span>
+            <span class="day-transport">🚋 Tram 15E from Praça do Comércio → Belém — 20 min, €3.00</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- DAY 4 -->
+      <div class="day-card">
+        <div class="day-num">04</div>
+        <div class="day-body">
+          <div class="day-date">Wednesday, 11 June</div>
+          <div class="day-theme">Sintra — Fairy-Tale Palaces</div>
+          <ul class="day-schedule">
+            <li><strong>8:00</strong> — Early train from <strong>Rossio Station</strong> to Sintra (~40 min, €4.90 return). Sit on the left for best views</li>
+            <li><strong>9:00</strong> — Bus 434 or Uber to <strong>Pena Palace</strong> — colourful Romanticist hilltop castle. <a href="https://www.parfruessintra.pt" target="_blank" style="color:var(--ocean);text-decoration:underline;">Book timed tickets online NOW</a> (€14 entry, sells out in June)</li>
+            <li><strong>11:00</strong> — Walk 400m to <strong>Moorish Castle</strong> — ancient battlements, panoramic views (€8)</li>
+            <li><strong>12:30</strong> — Bus/walk to Sintra town centre. Lunch + <strong>travesseiros</strong> pastry from Casa Piriquita</li>
+            <li><strong>14:00</strong> — <strong>Quinta da Regaleira</strong> — Gothic mansion, mystical gardens, the famous Initiation Well (€10)</li>
+            <li><strong>16:00</strong> — Optional: Uber to <strong>Cabo da Roca</strong> — westernmost point of mainland Europe. Dramatic cliffs (~€15, 20 min)</li>
+            <li><strong>18:00</strong> — Train back to Lisbon</li>
+            <li><strong>20:00</strong> — Seafood feast at <strong>Cervejaria Ramiro</strong> — giant prawns, percebes, and the legendary steak sandwich finale</li>
+          </ul>
+          <div class="day-tip">⚠️ Book Pena Palace timed tickets at parfruessintra.pt right now. June slots sell out days in advance.</div>
+          <div style="margin-top:10px; padding:12px; background:rgba(26,107,138,0.04); border-radius:8px;">
+            <div style="font-size:13px; font-weight:700; color:var(--navy); margin-bottom:8px;">🗺️ Step-by-Step: Hotel → Sintra</div>
+            <div style="font-size:12.5px; color:var(--slate); line-height:1.8;">
+              <strong>1. Hotel → Rossio Station:</strong> Walk to <strong>Praça do Rossio</strong> — the station entrance is the ornate horseshoe-arch building on the northwest side of the square (2–5 min from your hotel). Look for the Neo-Manueline façade.<br>
+              <strong>2. Buy ticket:</strong> At the ticket machines inside. Return ticket to Sintra = <strong>€4.90</strong>. Use your Viva Viagem card or buy a paper ticket.<br>
+              <strong>3. Board train:</strong> CP train to <strong>Sintra</strong> (every 20 min). <strong>40 min ride</strong>. Sit on the LEFT side for best views.<br>
+              <strong>4. Sintra Station → Pena Palace:</strong> Exit station, cross the road. <strong>Bus 434</strong> stop is right outside (€7 hop-on-hop-off, runs every 15–20 min, 15 min ride up the hill). OR Uber ~€8.<br><br>
+              <strong>Return:</strong> Train back from Sintra station to Rossio (same platform, same 40 min). Last trains run until ~midnight.
+            </div>
+          </div>
+          <div style="margin-top:8px;">
+            <span class="day-transport">🚶 Hotel → Rossio Station — 2–5 min walk</span>
+            <span class="day-transport">🚂 Train: Rossio → Sintra — 40 min, €4.90 return</span>
+            <span class="day-transport">🚌 Bus 434: Sintra station → Pena Palace — 15 min, €7</span>
+            <span class="day-transport">🚗 Uber: Sintra → Cabo da Roca — 20 min, ~€15</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- DAY 5 — RACE DAY -->
+      <div class="day-card highlight">
+        <div class="day-num">05</div>
+        <div class="day-body">
+          <div class="day-date">Thursday, 12 June — Race Track Day 🏁</div>
+          <div class="day-theme">Estoril Circuit + Cascais</div>
+          <ul class="day-schedule">
+            <li><strong>8:30</strong> — Uber from Lisbon to <strong>Circuito do Estoril</strong> (~30 min, €15–20)</li>
+            <li><strong>9:00–13:00</strong> — <strong>TRACK EXPERIENCE</strong> with professional instructor. Race-prepped BMW M2 Competition or Porsche. All helmet & safety gear provided. No experience needed. Briefing → warm-up laps → full-speed sessions with coaching</li>
+            <li><strong>13:30</strong> — Post-track buzz. Uber 10 min to <strong>Cascais</strong></li>
+            <li><strong>14:00</strong> — Late lunch at the Cascais marina — fresh seafood, ocean views</li>
+            <li><strong>15:30</strong> — Explore <strong>Cascais old town</strong> — cobbled streets, colourful tiles, gelato</li>
+            <li><strong>16:30</strong> — Walk to <strong>Boca do Inferno</strong> (Hell's Mouth) — dramatic sea cliffs with crashing waves</li>
+            <li><strong>17:30</strong> — Optional: Uber to <strong>Guincho Beach</strong> for a wild Atlantic sunset (10 min)</li>
+            <li><strong>19:00</strong> — Train back to Lisbon from Cascais (40 min, €2.30)</li>
+            <li><strong>20:30</strong> — Farewell dinner: Splurge at <a href="https://www.belcanto.pt/en/" target="_blank" style="color:var(--coral);text-decoration:underline;font-weight:600;">Belcanto</a> (2 Michelin stars, €265 tasting) or <a href="https://www.almalisboa.pt/en/reservations" target="_blank" style="color:var(--coral);text-decoration:underline;font-weight:600;">Alma</a> (2 stars, ~€120 tasting)</li>
+          </ul>
+          <div class="day-tip">🏁 Contact track providers 4–6 weeks ahead. Andries Adventures (andriesadventures.com/car-trackdays) or First Driver (firstdriver.com.pt) — both provide car + instructor.</div>
+          <div style="margin-top:10px; padding:12px; background:rgba(212,101,74,0.04); border-radius:8px;">
+            <div style="font-size:13px; font-weight:700; color:var(--coral); margin-bottom:8px;">🗺️ Step-by-Step: Hotel → Estoril Circuit → Cascais → Home</div>
+            <div style="font-size:12.5px; color:var(--slate); line-height:1.8;">
+              <strong>Morning — Hotel → Estoril Circuit:</strong> Uber from hotel door. 30 min on the A5 motorway, €15–20. Address: Circuito do Estoril, Av. Alfredo César Torres, 2645-032 Alcabideche.<br><br>
+              <strong>After track → Cascais:</strong> Uber from circuit to Cascais centre. 10 min, €5–8.<br><br>
+              <strong>Evening — Cascais → Hotel:</strong> Walk to <strong>Cascais train station</strong> (centre of town, 5 min walk from marina). Take <strong>CP train</strong> to <strong>Cais do Sodré</strong> station in Lisbon. <strong>40 min ride, €2.30</strong> (trains every 20 min until midnight). From Cais do Sodré, walk 10 min north to hotel in Baixa, OR take metro Green Line 1 stop to Rossio.<br><br>
+              <strong>Optional Guincho Beach:</strong> Uber from Cascais, 10 min west, €5–8. Then Uber back to Cascais station for the train.
+            </div>
+          </div>
+          <div style="margin-top:8px;">
+            <span class="day-transport highlight-t">🚗 Uber: Hotel → Estoril Circuit — 30 min, €15–20</span>
+            <span class="day-transport highlight-t">🚗 Uber: Estoril → Cascais — 10 min, €5–8</span>
+            <span class="day-transport highlight-t">🚂 Train: Cascais → Cais do Sodré — 40 min, €2.30</span>
+            <span class="day-transport highlight-t">🚶 Cais do Sodré → Hotel — 10 min walk or 1 metro stop</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- DAY 6 -->
+      <div class="day-card">
+        <div class="day-num">06</div>
+        <div class="day-body">
+          <div class="day-date">Friday, 13 June — Departure</div>
+          <div class="day-theme">Morning Stroll & Home</div>
+          <ul class="day-schedule">
+            <li><strong>8:30</strong> — Relaxed breakfast at hotel or a local café</li>
+            <li><strong>9:30</strong> — Last stroll through <strong>Príncipe Real</strong> or <strong>Chiado</strong>. Pick up souvenirs — azulejo tiles, cork products, Portuguese ceramics, tinned fish (conservas)</li>
+            <li><strong>10:30</strong> — One final pastéis de nata</li>
+            <li><strong>11:00</strong> — Head to airport (Metro or Uber, ~20–30 min)</li>
+            <li><strong>14:20</strong> — Depart Lisbon ✈️</li>
+          </ul>
+          <div class="day-tip">🛍️ Best souvenirs: Conservas (tinned fish in beautiful packaging) from Loja das Conservas in Cais do Sodré. Cork goods. Hand-painted azulejo tiles.</div>
+          <div style="margin-top:10px; padding:12px; background:rgba(26,107,138,0.04); border-radius:8px;">
+            <div style="font-size:13px; font-weight:700; color:var(--navy); margin-bottom:8px;">🗺️ Step-by-Step: Hotel → Airport</div>
+            <div style="font-size:12.5px; color:var(--slate); line-height:1.8;">
+              <strong>Option A — Metro (cheapest):</strong> Walk to <strong>Rossio metro</strong> (2–5 min). Take <strong>Green Line</strong> direction Telheiras → change at <strong>Alameda</strong> to <strong>Red Line</strong> direction Aeroporto → exit at <strong>Aeroporto</strong>. Total: ~25 min, €1.65.<br><br>
+              <strong>Option B — Uber (easiest with luggage):</strong> Uber from hotel door to Terminal 1. 20–30 min depending on traffic, €10–15.<br><br>
+              ⏰ Flight at 14:20 — aim to be at airport by 11:30 (international). Leave hotel by 11:00.
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- IMAGES — LISBON -->
+<section style="background: var(--white);">
+  <div class="container">
+    <div class="section-label">The Sights</div>
+    <div class="section-title">What You'll See</div>
+
+    <div class="img-row">
+      <div class="img-card">
+        <img src="https://images.unsplash.com/photo-1585208798174-6cedd86e019a?w=600&h=450&fit=crop" alt="Praça do Comércio">
+        <div class="img-caption">Praça do Comércio — Day 1</div>
+      </div>
+      <div class="img-card">
+        <img src="https://images.unsplash.com/photo-1548707309-dcebeab426c8?w=600&h=450&fit=crop" alt="Alfama Lisbon">
+        <div class="img-caption">Alfama's Tiled Streets — Day 2</div>
+      </div>
+    </div>
+    <div class="img-row triple">
+      <div class="img-card">
+        <img src="https://images.unsplash.com/photo-1580323956656-26bbb7d8e8ad?w=400&h=300&fit=crop" alt="Belém Tower">
+        <div class="img-caption">Tower of Belém — Day 3</div>
+      </div>
+      <div class="img-card">
+        <img src="https://images.unsplash.com/photo-1536663815808-535e2280d2c2?w=400&h=300&fit=crop" alt="Pena Palace">
+        <div class="img-caption">Pena Palace, Sintra — Day 4</div>
+      </div>
+      <div class="img-card">
+        <img src="https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=400&h=300&fit=crop" alt="Cascais">
+        <div class="img-caption">Cascais Marina — Day 5</div>
+      </div>
+    </div>
+    <div class="img-row">
+      <div class="img-card">
+        <img src="https://images.unsplash.com/photo-1613336026275-d6d473084e85?w=600&h=450&fit=crop" alt="Lisbon Tram">
+        <div class="img-caption">Tram 28 — Day 2</div>
+      </div>
+      <div class="img-card">
+        <img src="https://images.unsplash.com/photo-1592853625511-ad0edcc69c07?w=600&h=450&fit=crop" alt="Lisbon viewpoint">
+        <div class="img-caption">Miradouro Sunset — Day 1</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GETTING AROUND -->
+<section style="background: var(--white);">
+  <div class="container">
+    <div class="section-label">Logistics</div>
+    <div class="section-title">Getting Around</div>
+    <p class="section-intro">No rental car needed for this trip. Public transport + Uber/Bolt covers everything cheaply and efficiently.</p>
+
+    <table class="transport-table">
+      <thead><tr><th>Route</th><th>Best Method</th><th>Time</th><th>Cost</th></tr></thead>
+      <tbody>
+        <tr><td>Airport → City Centre</td><td>Metro (Red Line) or Uber</td><td>20–30 min</td><td>€1.65 / €10–15</td></tr>
+        <tr><td>Within Lisbon</td><td>Metro + Uber/Bolt</td><td>5–20 min</td><td>€1.65 / €4–8</td></tr>
+        <tr><td>Lisbon → Sintra</td><td>Train from Rossio</td><td>40 min</td><td>€4.90 return</td></tr>
+        <tr><td>Lisbon → Estoril Circuit</td><td>Uber/Bolt</td><td>30–40 min</td><td>€15–20</td></tr>
+        <tr><td>Estoril → Cascais</td><td>Uber</td><td>10 min</td><td>€5–8</td></tr>
+        <tr><td>Cascais → Lisbon</td><td>Train to Cais do Sodré</td><td>40 min</td><td>€2.30</td></tr>
+        <tr><td>Sintra → Cabo da Roca</td><td>Bus 403 or Uber</td><td>20–30 min</td><td>€4 / €15</td></tr>
+        <tr><td>Cascais → Guincho Beach</td><td>Uber or bike</td><td>10 min</td><td>€5–8</td></tr>
+      </tbody>
+    </table>
+
+    <div class="tips-grid">
+      <div class="tip-card">
+        <h4>🚇 Viva Viagem Card</h4>
+        <p>Buy at any metro station (€0.50 for the card). Load credit and tap for metro, buses, and trams. Also works on Sintra & Cascais trains.</p>
+      </div>
+      <div class="tip-card">
+        <h4>🚗 Why No Rental Car?</h4>
+        <p>Lisbon's hills and narrow lanes make driving stressful. Parking is scarce and expensive. Uber is €4–8 across the city. Train to Sintra & Cascais is fast and scenic.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESTAURANTS -->
+<section>
+  <div class="container">
+    <div class="section-label">Eating & Drinking</div>
+    <div class="section-title">Restaurant Picks</div>
+
+    <div class="resto-category">
+      <h3>Fine Dining — Book Ahead</h3>
+      <ul class="resto-list">
+        <li><strong><a href="https://www.belcanto.pt/en/" target="_blank" style="color:var(--navy);text-decoration:underline;">Belcanto</a></strong> — 2 Michelin stars. Chef José Avillez. #42 World's 50 Best. Tasting menu €265, à la carte ~€225–250pp. Chiado. Tue–Sat. <span class="price">€€€€ · ~€265–350pp with wine</span></li>
+        <li><strong><a href="https://www.almalisboa.pt/en/reservations" target="_blank" style="color:var(--navy);text-decoration:underline;">Alma (Henrique Sá Pessoa)</a></strong> — 2 Michelin stars. Now at Páteo Bagatela. Tasting menus ~€120–150pp. <span class="price">€€€€ · ~€150–220pp with wine</span></li>
+        <li><strong>BouBou's</strong> — Príncipe Real. Top Chef France winner. 7-course tasting from €80. Best-value fine dining in Lisbon. <span class="price">€€€ · ~€80–130pp with wine</span></li>
+        <li><strong>Cura</strong> — 1 star. Four Seasons Ritz. Seafood-forward. 5-course ~€130, 10-course ~€175. <span class="price">€€€€ · ~€150–250pp with wine</span></li>
+        <li><strong>Arkhe</strong> — 1 star. Vegetable-forward tasting, ~€80–95. Even carnivores love it. <span class="price">€€€ · ~€95–140pp with wine</span></li>
+      </ul>
+    </div>
+
+    <div class="resto-category">
+      <h3>Mid-Range Gems</h3>
+      <ul class="resto-list">
+        <li><strong>Taberna da Rua das Flores</strong> — 9 tables only. Chalkboard menu, seasonal, local. Book or go early. <span class="price">€€ · ~€30–45pp</span></li>
+        <li><strong>Prado</strong> — Farm-to-table pioneer in Mouraria. Seasonal share plates. <span class="price">€€ · ~€35–50pp</span></li>
+        <li><strong>Canalha</strong> — Belém. Smoked eel, aged tuna tiradito. Casual-refined. <span class="price">€€ · ~€30–45pp</span></li>
+        <li><strong>Discreto</strong> — Hidden under an arch in Alfama. Rabbit rice, bacalhau. <span class="price">€€ · ~€25–40pp</span></li>
+        <li><strong>Cervejaria Ramiro</strong> — Legendary seafood. Giant prawns, clams, and the steak sandwich to end. <span class="price">€€–€€€ · ~€40–70pp</span></li>
+      </ul>
+    </div>
+
+    <div class="resto-category">
+      <h3>Casual & Budget-Friendly</h3>
+      <ul class="resto-list">
+        <li><strong>Pastéis de Belém</strong> — Original custard tarts since 1837. ~€1.40 each. Non-negotiable. <span class="price">€</span></li>
+        <li><strong>Time Out Market</strong> — Curated food hall. Top chefs' stalls, €8–15/dish. Great for sampling variety. <span class="price">€–€€</span></li>
+        <li><strong>Vida de Tasca</strong> — Paper tablecloths, daily specials, home cooking. Very local. <span class="price">€</span></li>
+        <li><strong>A Nossa Casa</strong> — Bairro Alto. Portuguese tradition with global flair. <span class="price">€–€€</span></li>
+      </ul>
+    </div>
+
+    <h3 style="font-family:'Playfair Display',serif; font-size:20px; color:var(--navy); margin:40px 0 16px;">Must-Try Foods</h3>
+    <div class="food-grid">
+      <div class="food-item">Pastéis de Nata</div>
+      <div class="food-item">Bacalhau à Brás</div>
+      <div class="food-item">Arroz de Marisco</div>
+      <div class="food-item">Bifana</div>
+      <div class="food-item">Amêijoas à Bulhão Pato</div>
+      <div class="food-item">Ginjinha</div>
+      <div class="food-item">Travesseiros (Sintra)</div>
+      <div class="food-item">Queijo da Serra</div>
+    </div>
+  </div>
+</section>
+
+<!-- ACCOMMODATION -->
+<section style="background: var(--white);">
+  <div class="container">
+    <div class="section-label">Where to Stay</div>
+    <div class="section-title">Hotels — Two Tiers</div>
+    <p class="section-intro">Stay in one hotel for all 5 nights. Central Lisbon (Chiado, Baixa, Príncipe Real, or Avenida da Liberdade) gives you the best access to everything.</p>
+
+    <div class="budget-grid">
+      <div class="budget-col">
+        <div class="budget-header premium">
+          <h3>Ultra Premium</h3>
+          <p>€350–600+ / night (HK$3,000–5,200+)</p>
+        </div>
+        <div class="budget-body">
+          <ul>
+            <li><strong>Four Seasons Ritz</strong> — The benchmark. City views, pool, Cura restaurant. ~€500+</li>
+            <li><strong>Olissippo Lapa Palace</strong> — 19th-century palace, gardens, river views. ~€400</li>
+            <li><strong>Verride Palácio Santa Catarina</strong> — Rooftop pool, Tagus views. ~€350</li>
+            <li><strong>Bairro Alto Hotel</strong> — Sleek 5-star, panoramic terrace. ~€350</li>
+            <li><strong>Palacete Chafariz d'El Rei</strong> — Exclusive 6-suite boutique in Alfama. ~€400</li>
+          </ul>
+        </div>
+        <div class="budget-total">5 nights: HK$15,000–26,000</div>
+      </div>
+      <div class="budget-col">
+        <div class="budget-header value">
+          <h3>HK$1,000 / Night</h3>
+          <p>~€100–125 / night</p>
+        </div>
+        <div class="budget-body">
+          <ul>
+            <li><strong>Hotel da Baixa</strong> — 4-star, historic Baixa, 200m from Rossio. ~€100–130</li>
+            <li><strong>Hotel 1908</strong> — Art Nouveau, rooftop bar, Intendente. ~€90–120</li>
+            <li><strong>My Story Hotel Rossio</strong> — Central, comfy, friendly. ~€80–110</li>
+            <li><strong>The Independente</strong> — Bohemian-chic suites in Príncipe Real. ~€80–110</li>
+            <li><strong>Pestana CR7 Lisboa</strong> — Modern, Cais do Sodré. ~€100–130</li>
+          </ul>
+        </div>
+        <div class="budget-total">5 nights: HK$4,300–5,400</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOTAL BUDGET -->
+<section>
+  <div class="container">
+    <div class="total-box">
+      <h3>Total Trip Budget</h3>
+      <div class="total-grid">
+        <div class="total-cell header">Category</div>
+        <div class="total-cell header">Ultra Premium</div>
+        <div class="total-cell header">HK$1,000/Night</div>
+
+        <div class="total-cell data">Flights (HK return)</div>
+        <div class="total-cell data">HK$15,000–25,000</div>
+        <div class="total-cell data">HK$6,000–12,000</div>
+
+        <div class="total-cell data">Hotel (5 nights)</div>
+        <div class="total-cell data">HK$15,000–26,000</div>
+        <div class="total-cell data">HK$4,300–5,400</div>
+
+        <div class="total-cell data">Food & Drink</div>
+        <div class="total-cell data">HK$6,000–12,000</div>
+        <div class="total-cell data">HK$2,500–4,000</div>
+
+        <div class="total-cell data">Transport (local)</div>
+        <div class="total-cell data">HK$1,200–2,000</div>
+        <div class="total-cell data">HK$600–1,000</div>
+
+        <div class="total-cell data">Activities & Entry</div>
+        <div class="total-cell data">HK$1,200–2,000</div>
+        <div class="total-cell data">HK$600–1,200</div>
+
+        <div class="total-cell data highlight-row">ESTIMATED TOTAL</div>
+        <div class="total-cell data highlight-row">HK$38,000–67,000</div>
+        <div class="total-cell data highlight-row">HK$14,000–23,600</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRACTICAL TIPS -->
+<section style="background: var(--white);">
+  <div class="container">
+    <div class="section-label">Before You Go</div>
+    <div class="section-title">Practical Tips</div>
+
+    <div class="tips-grid">
+      <div class="tip-card">
+        <h4>☀️ Weather (June)</h4>
+        <p>Warm and sunny. 27–30°C highs, 16–18°C evenings. Very little rain. Sintra can be foggy mornings. Pack sunscreen, light layers, comfy walking shoes.</p>
+      </div>
+      <div class="tip-card">
+        <h4>💶 Money</h4>
+        <p>Euro (€). 1 EUR ≈ HK$8.5–8.7. Cards accepted almost everywhere. Carry ~€50 cash for small tascas and kiosks. Tipping 5–10% is generous.</p>
+      </div>
+      <div class="tip-card">
+        <h4>📱 Connectivity</h4>
+        <p>Get an Airalo eSIM before departure — works great in Portugal, no roaming stress. Free Wi-Fi in most hotels and cafés.</p>
+      </div>
+      <div class="tip-card">
+        <h4>🔒 Safety</h4>
+        <p>Lisbon is very safe. Watch for pickpockets on Tram 28 and in Baixa/Alfama tourist zones. Uber/Bolt for late-night transport.</p>
+      </div>
+      <div class="tip-card">
+        <h4>🗣️ Language</h4>
+        <p>English widely spoken in tourist areas. Key phrases: Obrigado/a (thank you), Bom dia (good morning), Por favor (please).</p>
+      </div>
+      <div class="tip-card">
+        <h4>📋 Book NOW</h4>
+        <p>1) Pena Palace timed tickets. 2) Belcanto/Alma dinner. 3) Hotel. June is peak season — don't wait.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING LINKS -->
+<section>
+  <div class="container">
+    <div class="section-label">Action Items</div>
+    <div class="section-title">Quick Booking Links</div>
+    <p class="section-intro">Everything you need to book in one place. Do these now — June is peak season and things sell out fast.</p>
+
+    <div class="places-grid">
+      <div class="place-card">
+        <div class="place-tag tag-sintra">SINTRA — Book ASAP</div>
+        <h4>🏰 Pena Palace Timed Tickets</h4>
+        <p>Sells out days in advance in June. Book your timed entry slot now.</p>
+        <p style="margin-top:8px;"><a href="https://www.parfruessintra.pt" target="_blank" style="color:var(--ocean);font-weight:700;">→ parfruessintra.pt</a></p>
+      </div>
+      <div class="place-card">
+        <div class="place-tag tag-sintra">SINTRA</div>
+        <h4>🌿 Quinta da Regaleira</h4>
+        <p>Gothic mansion + Initiation Well. Book online to skip queues.</p>
+        <p style="margin-top:8px;"><a href="https://www.rfregaleira.pt" target="_blank" style="color:var(--ocean);font-weight:700;">→ rfregaleira.pt</a></p>
+      </div>
+      <div class="place-card">
+        <div class="place-tag tag-cascais">FINE DINING</div>
+        <h4>⭐⭐ Belcanto (Tasting €265)</h4>
+        <p>2 Michelin stars. #42 World's 50 Best. Tue–Sat. Book 2–4 weeks ahead. €200/pp no-show fee.</p>
+        <p style="margin-top:8px;"><a href="https://www.belcanto.pt/en/" target="_blank" style="color:var(--ocean);font-weight:700;">→ belcanto.pt</a></p>
+      </div>
+      <div class="place-card">
+        <div class="place-tag tag-cascais">FINE DINING</div>
+        <h4>⭐⭐ Alma / Henrique Sá Pessoa (~€120)</h4>
+        <p>2 Michelin stars. Now at Páteo Bagatela. Two tasting menus: Alma or Costa a Costa.</p>
+        <p style="margin-top:8px;"><a href="https://www.almalisboa.pt/en/reservations" target="_blank" style="color:var(--ocean);font-weight:700;">→ almalisboa.pt/reservations</a></p>
+      </div>
+      <div class="place-card">
+        <div class="place-tag tag-lisbon">HOTEL BOOKING</div>
+        <h4>🏨 Compare Hotels</h4>
+        <p>Central Lisbon (Chiado, Baixa, Príncipe Real). Book now — June prices rise as dates approach.</p>
+        <p style="margin-top:8px;"><a href="https://www.booking.com/searchresults.html?ss=Lisbon&checkin=2026-06-08&checkout=2026-06-13" target="_blank" style="color:var(--ocean);font-weight:700;">→ Booking.com</a></p>
+      </div>
+      <div class="place-card">
+        <div class="place-tag tag-lisbon">CONNECTIVITY</div>
+        <h4>📱 eSIM for Portugal</h4>
+        <p>Get Airalo eSIM before departure. Works great in Portugal, no roaming charges.</p>
+        <p style="margin-top:8px;"><a href="https://www.airalo.com/portugal-esim" target="_blank" style="color:var(--ocean);font-weight:700;">→ airalo.com/portugal-esim</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<div class="footer">
+  <p><strong>Lisbon Travel Guide</strong> — 8–13 June 2026 (5 Nights)</p>
+  <p style="margin-top:8px;">All prices approximate based on 2025/2026 rates. Book early for best availability.</p>
+</div>
+
+</body>
+</html>
